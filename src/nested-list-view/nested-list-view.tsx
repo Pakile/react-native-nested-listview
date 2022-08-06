@@ -77,7 +77,7 @@ const NestedListView: React.FC<IProps> = React.memo(
             );
           }
           copyNode[childrenName] = children.map((_: INode, index: number) =>
-            generateIds(children[index]),
+             generateIds({...children[index], parentKey: node?.key || ''}),
           );
         }
 
